@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet" />
     <style>
-      /* ===== STYLE (compiled from style.css with additions) ===== */
+      /* ===== STYLE ===== */
       :root{
         --ink:#11100f;
         --paper:#eee9df;
@@ -37,7 +37,8 @@
         background:var(--paper);
         color:var(--ink);
         font-family:var(--sans);
-        overflow-x:hidden
+        overflow-x:hidden;
+        cursor: none !important;
       }
       .noise{
         position:fixed;
@@ -1391,7 +1392,9 @@
         padding-bottom:10px;
         text-decoration:none
       }
-      @media(max-width:800px){
+
+      /* ===== MOBILE RESPONSIVE ===== */
+      @media(max-width:900px){
         .site-header{
           height:65px;
           padding:0 20px
@@ -1407,13 +1410,18 @@
           display:none;
           flex-direction:column;
           align-items:flex-start;
-          gap:20px
+          gap:20px;
+          border-bottom:1px solid #333;
+          box-shadow:0 20px 40px rgba(0,0,0,0.4);
         }
         .nav.open{
           display:flex
         }
         .nav-join{
-          margin:0
+          margin:0;
+          width:100%;
+          text-align:center;
+          border-color:#fff;
         }
         .menu-toggle{
           display:block
@@ -1423,87 +1431,106 @@
         }
         .hero-copy{
           left:7vw;
-          bottom:13vh
+          bottom:13vh;
+          max-width:85vw;
         }
         .hero h1{
-          font-size:clamp(56px, 15vw, 85px)
+          font-size:clamp(48px, 12vw, 70px)
         }
         .hero-stamp{
-          right:6vw;
+          right:5vw;
           bottom:8vh;
-          width:105px;
-          height:105px;
-          font-size:8px
+          width:90px;
+          height:90px;
+          font-size:7px;
+          line-height:1.2;
+        }
+        .hero-meta{
+          font-size:8px;
         }
         .split-section{
-          padding:80px 7vw;
+          padding:70px 7vw 60px;
           display:block;
           min-height:auto
         }
         .split-section>.eyebrow{
-          margin-bottom:70px
+          margin-bottom:40px
         }
         .manifesto-count{
-          margin-top:70px;
-          width:180px
+          margin-top:50px;
+          width:160px
         }
         .latest, .people{
-          padding:80px 20px
+          padding:60px 20px
         }
         .film-grid{
           grid-template-columns:1fr;
-          gap:12px
+          gap:14px
         }
         .film-card, .film-card.feature-film{
-          height:430px
+          height:320px
         }
         .feature-film .film-title h3{
-          font-size:48px
+          font-size:38px
+        }
+        .film-title h3{
+          font-size:28px
         }
         .process{
           display:block
         }
         .process-photo{
-          height:400px
+          height:300px
         }
         .process-copy{
-          padding:65px 7vw
+          padding:50px 7vw
         }
         .process-list{
           position:static;
-          padding:0 7vw 35px
+          padding:0 7vw 30px;
+          grid-template-columns:30px auto;
+          gap:6px 10px;
         }
         .people-row{
-          grid-template-columns:1fr 1fr
+          grid-template-columns:1fr 1fr;
+          gap:20px
         }
         .join-card{
-          min-height:250px
+          min-height:200px
+        }
+        .people .join-card p{
+          font-size:26px
         }
         .events{
-          padding:80px 7vw
+          padding:60px 7vw
         }
         .events h2{
-          margin-bottom:45px
+          font-size:clamp(40px, 10vw, 60px);
+          margin-bottom:30px
         }
         .event-list a{
-          grid-template-columns:66px 1fr 18px;
-          gap:9px;
-          padding:15px 0
+          grid-template-columns:50px 1fr 18px;
+          gap:10px;
+          padding:16px 0;
+          min-height:70px
         }
         .event-type, .event-place{
           display:none
         }
         .event-list strong{
-          font-size:20px
+          font-size:18px
+        }
+        .event-list time b{
+          font-size:30px
         }
         .gallery{
-          padding:80px 20px;
+          padding:60px 20px;
           grid-template-columns:1fr 1fr;
           gap:12px
         }
         .gallery-copy{
           grid-column:1/-1;
-          margin-bottom:20px
+          margin-bottom:10px
         }
         .gallery .g1, .gallery .g3{
           margin-top:0
@@ -1511,14 +1538,62 @@
         .gallery .g3{
           grid-column:2
         }
+        .gallery img{
+          height:200px
+        }
+        .school{
+          padding:60px 7vw;
+          grid-template-columns:1fr;
+          gap:30px;
+        }
+        .school h2{
+          font-size:clamp(40px, 10vw, 60px)
+        }
+        .school-note{
+          grid-column:1;
+          max-width:100%;
+          margin-top:10px
+        }
+        .lesson-list a{
+          min-height:80px;
+          grid-template-columns:30px 1fr 40px 16px;
+          gap:10px;
+        }
+        .lesson-list strong{
+          font-size:20px
+        }
+        .join{
+          padding:60px 7vw;
+          grid-template-columns:1fr;
+          gap:40px;
+        }
+        .join h2{
+          font-size:clamp(40px, 10vw, 60px)
+        }
+        .join>div>p:not(.eyebrow){
+          max-width:100%;
+        }
+        footer{
+          padding:30px 20px 20px;
+          grid-template-columns:1fr 1fr;
+          gap:15px
+        }
+        footer small{
+          margin-top:20px
+        }
+        footer div{
+          flex-wrap:wrap;
+          gap:10px
+        }
         .chapter-screen{
-          padding:64px 7vw;
-          min-height:100svh
+          padding:50px 7vw;
+          min-height:auto
         }
         .journal-chapter, .departments-chapter, .poster-chapter, .alumni-chapter, .cinema-chapter, .contact-chapter{
           display:flex;
           flex-direction:column;
-          gap:35px
+          gap:30px;
+          padding:50px 7vw;
         }
         .journal-chapter{
           padding:0
@@ -1527,36 +1602,56 @@
           height:40svh
         }
         .journal-copy{
-          padding:45px 7vw
+          padding:30px 7vw
         }
         .department-grid, .toolkit-list, .idea-cards, .numbers-chapter{
           grid-template-columns:1fr
         }
+        .department-grid span{
+          padding:14px 0
+        }
         .poster-art{
           width:100%;
-          height:44svh
+          height:40svh;
+          font-size:clamp(40px, 10vw, 60px)
+        }
+        .poster-copy h2{
+          font-size:clamp(40px, 10vw, 60px)
         }
         .toolkit-list{
-          gap:12px
+          gap:10px
         }
         .toolkit-list div{
-          padding:10px 0
+          padding:12px 0
+        }
+        .toolkit-list strong{
+          font-size:26px
         }
         .story-chapter{
           grid-template-columns:1fr;
-          gap:35px
+          gap:25px;
+          padding:50px 7vw
         }
         .story-number{
-          transform:none
+          transform:none;
+          font-size:clamp(40px, 10vw, 60px)
+        }
+        .story-chapter h2{
+          font-size:clamp(38px, 9vw, 55px)
         }
         .award-rail{
           grid-template-columns:1fr;
           gap:0;
-          margin-top:25px
+          margin-top:20px
         }
         .award-rail article{
-          min-height:145px;
-          border-bottom:1px solid var(--ink)
+          min-height:120px;
+          border-bottom:1px solid var(--ink);
+          padding:16px 0
+        }
+        .award-rail h3{
+          font-size:30px;
+          margin:20px 0 10px
         }
         .alumni-chapter{
           padding-left:7vw
@@ -1565,17 +1660,303 @@
           height:35svh;
           width:100%
         }
+        .alumni-chapter h2{
+          font-size:clamp(38px, 9vw, 55px)
+        }
+        .cinema-chapter h2{
+          font-size:clamp(38px, 9vw, 55px)
+        }
         .recommendations{
           width:100%
         }
+        .recommendations strong{
+          font-size:20px
+        }
         .numbers-chapter{
-          gap:28px
+          gap:20px;
+          padding:50px 7vw
+        }
+        .numbers-chapter strong{
+          font-size:clamp(50px, 12vw, 80px)
+        }
+        .contact-chapter{
+          gap:25px
+        }
+        .contact-chapter h2{
+          font-size:clamp(40px, 10vw, 60px)
         }
         .contact-details{
           align-self:start
         }
+        .quote-chapter blockquote{
+          font-size:clamp(32px, 8vw, 50px)
+        }
         .motion-ready .chapter>*{
-          transition-duration:900ms
+          transition-duration:800ms
+        }
+        dialog{
+          padding:30px 25px;
+          max-width:95vw;
+        }
+        dialog h2{
+          font-size:28px !important;
+        }
+        .round-link{
+          width:100px;
+          height:100px;
+          font-size:9px
+        }
+        .hero-stamp{
+          display:none;
+        }
+        .hero-meta span:last-child{
+          display:none;
+        }
+        .section-head{
+          flex-direction:column;
+          gap:15px;
+          align-items:flex-start;
+        }
+        .brand{
+          font-size:10px;
+          gap:6px;
+        }
+        .brand i{
+          width:14px;
+          height:14px;
+        }
+      }
+
+      @media(max-width:500px){
+        .hero-copy{
+          left:5vw;
+          bottom:10vh;
+          max-width:90vw;
+        }
+        .hero h1{
+          font-size:clamp(36px, 14vw, 50px)
+        }
+        .hero-intro{
+          font-size:14px;
+          max-width:100%;
+        }
+        .people-row{
+          grid-template-columns:1fr;
+          gap:25px
+        }
+        .people img{
+          height:280px
+        }
+        .film-card, .film-card.feature-film{
+          height:250px
+        }
+        .feature-film .film-title h3{
+          font-size:30px
+        }
+        .gallery{
+          grid-template-columns:1fr;
+        }
+        .gallery .g3{
+          grid-column:1;
+        }
+        .gallery img{
+          height:180px
+        }
+        .event-list a{
+          grid-template-columns:40px 1fr 16px;
+          gap:8px;
+          min-height:60px;
+        }
+        .event-list time b{
+          font-size:24px
+        }
+        .event-list strong{
+          font-size:15px
+        }
+        .join input, .join select{
+          font-size:14px;
+          padding:10px 0;
+        }
+        footer{
+          grid-template-columns:1fr;
+          gap:10px;
+          text-align:center;
+        }
+        footer div{
+          justify-content:center;
+        }
+        .toolkit-list div{
+          padding:10px 0;
+        }
+        .idea-cards article{
+          min-height:180px;
+          padding:18px;
+        }
+        .idea-cards h3{
+          font-size:24px;
+        }
+        .department-grid b{
+          font-size:20px;
+        }
+        .poster-art{
+          height:30svh;
+          font-size:clamp(30px, 12vw, 45px);
+        }
+        .poster-art small{
+          font-size:8px;
+          margin-top:15px;
+        }
+        .award-rail h3{
+          font-size:24px;
+        }
+        .story-number{
+          font-size:clamp(30px, 10vw, 45px);
+        }
+        .round-link{
+          width:80px;
+          height:80px;
+          font-size:8px;
+        }
+        .brand{
+          font-size:9px;
+        }
+        .brand span{
+          font-size:12px;
+        }
+        .menu-toggle{
+          font-size:10px;
+        }
+        .nav a{
+          font-size:10px;
+        }
+        .eyebrow{
+          font-size:10px;
+          margin-bottom:15px;
+        }
+        .eyebrow span{
+          width:16px;
+          margin-right:6px;
+        }
+        .text-link{
+          font-size:10px;
+          gap:12px;
+        }
+        .text-link b{
+          font-size:14px;
+        }
+        .split-section{
+          padding:40px 5vw 40px;
+        }
+        .split-section h2{
+          font-size:clamp(30px, 8vw, 40px);
+        }
+        .body-copy{
+          font-size:15px;
+        }
+        .manifesto-count strong{
+          font-size:40px;
+        }
+        .manifesto-count span{
+          font-size:10px;
+        }
+        .section-note{
+          font-size:10px;
+        }
+        .join-card{
+          min-height:150px;
+          padding:16px;
+        }
+        .people .join-card p{
+          font-size:22px;
+        }
+        .join-card a{
+          font-size:24px;
+        }
+        .process-copy h2{
+          font-size:clamp(30px, 8vw, 40px);
+        }
+        .process-copy>p:not(.eyebrow){
+          font-size:14px;
+        }
+        .lesson-list strong{
+          font-size:17px;
+        }
+        .school h2{
+          font-size:clamp(30px, 8vw, 40px);
+        }
+        .events h2{
+          font-size:clamp(30px, 8vw, 40px);
+        }
+        .gallery-copy h2{
+          font-size:clamp(30px, 8vw, 40px);
+        }
+        .join h2{
+          font-size:clamp(30px, 8vw, 40px);
+        }
+        .chapter-screen h2{
+          font-size:clamp(28px, 7vw, 38px) !important;
+        }
+        .quote-chapter blockquote{
+          font-size:clamp(24px, 7vw, 36px);
+        }
+        .quote-credit{
+          font-size:10px;
+          margin-top:20px;
+        }
+        .contact-details p, .contact-details a{
+          font-size:10px;
+        }
+        .numbers-chapter strong{
+          font-size:clamp(40px, 12vw, 60px);
+        }
+        .numbers-chapter span{
+          font-size:10px;
+        }
+        dialog{
+          padding:20px 18px;
+        }
+        dialog h2{
+          font-size:22px !important;
+        }
+        .close-dialog{
+          font-size:24px;
+          right:12px;
+          top:8px;
+        }
+        .watch{
+          padding:10px 14px;
+          font-size:10px;
+        }
+        .form-status{
+          font-size:11px;
+        }
+        .hero-stamp{
+          display:none;
+        }
+        .hero-meta span:last-child{
+          display:none;
+        }
+        .hero-meta span:first-child{
+          font-size:7px;
+        }
+        .site-header{
+          height:56px;
+          padding:0 14px;
+        }
+        .site-header.scrolled{
+          height:52px;
+        }
+        .nav{
+          top:56px;
+          padding:18px 16px;
+          gap:14px;
+        }
+        .nav-join{
+          padding:10px;
+          font-size:10px;
+        }
+        .motion-ready .chapter>*{
+          transition-duration:600ms;
         }
       }
 
@@ -1606,9 +1987,22 @@
         0% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
         100% { opacity: 0; transform: translate(-50%, 80px) scale(0.3) rotate(360deg); }
       }
-      /* hide default cursor on interactive elements too */
       a, button, input, select, textarea, [role="button"], .film-card, .nav a, .text-link, .round-link, .join-card a {
         cursor: none !important;
+      }
+      @media (pointer: coarse) {
+        #star-cursor, .sprinkle {
+          display: none !important;
+        }
+        * {
+          cursor: auto !important;
+        }
+        a, button, input, select, textarea, [role="button"], .film-card, .nav a, .text-link, .round-link, .join-card a {
+          cursor: pointer !important;
+        }
+        body {
+          cursor: auto !important;
+        }
       }
     </style>
   </head>
@@ -1803,16 +2197,13 @@
 
     <script>
       (function(){
-        // motion-ready
         document.documentElement.classList.add('motion-ready');
 
-        // header scroll
         const header = document.querySelector('.site-header');
         window.addEventListener('scroll', () => {
           header.classList.toggle('scrolled', window.scrollY > 40);
         });
 
-        // mobile menu
         const menuBtn = document.querySelector('.menu-toggle');
         const nav = document.querySelector('.nav');
         menuBtn.addEventListener('click', () => {
@@ -1821,7 +2212,6 @@
         });
         document.querySelectorAll('.nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
 
-        // film dialog
         const dialog = document.querySelector('#film-dialog');
         const closeDialog = document.querySelector('.close-dialog');
         document.querySelectorAll('.film-card').forEach(card => {
@@ -1835,7 +2225,6 @@
         closeDialog.addEventListener('click', () => dialog.close());
         dialog.addEventListener('click', e => { if(e.target === dialog) dialog.close(); });
 
-        // join form
         document.querySelector('#join-form').addEventListener('submit', e => {
           e.preventDefault();
           const name = new FormData(e.currentTarget).get('name');
@@ -1843,7 +2232,6 @@
           e.currentTarget.reset();
         });
 
-        // scroll chapters
         const chapters = [...document.querySelectorAll('main > section:not(.hero)')];
         chapters.forEach(c => c.classList.add('chapter'));
         const observer = new IntersectionObserver(entries => {
@@ -1851,11 +2239,9 @@
         }, { threshold: 0.2 });
         chapters.forEach(c => observer.observe(c));
 
-        // ------- SOUND -------
         const audio = document.getElementById('ambient-sound');
         const toggleBtn = document.getElementById('sound-toggle');
         let soundOn = false;
-
         function toggleSound() {
           soundOn = !soundOn;
           if (soundOn) {
@@ -1871,51 +2257,51 @@
         audio.loop = true;
         toggleBtn.textContent = '🔇 SOUND OFF';
 
-        // ===== STAR CURSOR + SPRINKLES =====
-        const star = document.getElementById('star-cursor');
-        const sprinkleChars = ['✦', '✧', '❋', '✶', '✷', '✸', '✹', '✺', '✻', '✼', '✽', '❀', '✦', '✧', '✶'];
-        const colors = ['#ffd700', '#ff6b6b', '#4ecdc4', '#ffe66d', '#ff9ff3', '#54a0ff', '#5f27cd', '#ff9f43'];
+        // STAR CURSOR + SPRINKLES (only on non-touch devices)
+        if (!('ontouchstart' in window) && !navigator.maxTouchPoints) {
+          const star = document.getElementById('star-cursor');
+          const sprinkleChars = ['✦', '✧', '❋', '✶', '✷', '✸', '✹', '✺', '✻', '✼', '✽', '❀', '✦', '✧', '✶'];
+          const colors = ['#ffd700', '#ff6b6b', '#4ecdc4', '#ffe66d', '#ff9ff3', '#54a0ff', '#5f27cd', '#ff9f43'];
+          let lastX = 0, lastY = 0;
 
-        let lastX = 0, lastY = 0;
+          document.addEventListener('mousemove', (e) => {
+            const x = e.clientX, y = e.clientY;
+            star.style.left = x + 'px';
+            star.style.top = y + 'px';
+            star.style.transform = `translate(-50%, -50%) rotate(${x * 0.05}deg) scale(${1 + Math.sin(Date.now() / 300) * 0.05})`;
+            const dx = x - lastX, dy = y - lastY;
+            if (Math.sqrt(dx*dx + dy*dy) > 3) {
+              createSprinkle(x, y);
+            }
+            lastX = x; lastY = y;
+          });
 
-        document.addEventListener('mousemove', (e) => {
-          const x = e.clientX, y = e.clientY;
-          star.style.left = x + 'px';
-          star.style.top = y + 'px';
-          star.style.transform = `translate(-50%, -50%) rotate(${x * 0.05}deg) scale(${1 + Math.sin(Date.now() / 300) * 0.05})`;
-
-          // drop sprinkles if moving enough
-          const dx = x - lastX, dy = y - lastY;
-          if (Math.sqrt(dx*dx + dy*dy) > 3) {
-            createSprinkle(x, y);
+          function createSprinkle(x, y) {
+            const el = document.createElement('div');
+            el.className = 'sprinkle';
+            el.textContent = sprinkleChars[Math.floor(Math.random() * sprinkleChars.length)];
+            el.style.left = x + 'px';
+            el.style.top = y + 'px';
+            el.style.color = colors[Math.floor(Math.random() * colors.length)];
+            el.style.fontSize = (8 + Math.random() * 10) + 'px';
+            el.style.transform = `translate(-50%, -50%) rotate(${Math.random() * 360}deg)`;
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 1100);
           }
-          lastX = x; lastY = y;
-        });
 
-        function createSprinkle(x, y) {
-          const el = document.createElement('div');
-          el.className = 'sprinkle';
-          el.textContent = sprinkleChars[Math.floor(Math.random() * sprinkleChars.length)];
-          el.style.left = x + 'px';
-          el.style.top = y + 'px';
-          el.style.color = colors[Math.floor(Math.random() * colors.length)];
-          el.style.fontSize = (8 + Math.random() * 10) + 'px';
-          el.style.transform = `translate(-50%, -50%) rotate(${Math.random() * 360}deg)`;
-          document.body.appendChild(el);
-          setTimeout(() => el.remove(), 1100);
+          document.addEventListener('click', (e) => {
+            for (let i = 0; i < 8; i++) {
+              setTimeout(() => {
+                createSprinkle(e.clientX + (Math.random()-0.5)*30, e.clientY + (Math.random()-0.5)*30);
+              }, i * 50);
+            }
+          });
+          document.body.style.cursor = 'none';
+        } else {
+          // Hide custom cursor on touch devices
+          document.getElementById('star-cursor').style.display = 'none';
+          document.body.style.cursor = 'auto';
         }
-
-        // also drop a few sprinkles on click
-        document.addEventListener('click', (e) => {
-          for (let i = 0; i < 8; i++) {
-            setTimeout(() => {
-              createSprinkle(e.clientX + (Math.random()-0.5)*30, e.clientY + (Math.random()-0.5)*30);
-            }, i * 50);
-          }
-        });
-
-        // hide default cursor on entire page
-        document.body.style.cursor = 'none';
       })();
     </script>
   </body>
